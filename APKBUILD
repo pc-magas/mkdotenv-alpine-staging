@@ -14,17 +14,17 @@ source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/d
 options="!check" # No tests
 
 prepare() {
-    cd "$srcdir/mkdotenv"
+	cd "$srcdir/mkdotenv"
 }
 
 build() {
-    echo "BUILD"
-    go build -ldflags "-X 'mkdotenv/msg.version=${pkgver}'" -o $srcdir/${pkgname}-$pkgver mkdotenv.go
+	echo "BUILD"
+	go build -ldflags "-X 'mkdotenv/msg.version=${pkgver}'" -o $srcdir/${pkgname}-$pkgver mkdotenv.go
 }
 
 package() {
-    echo "INSTALL"
-    install -Dm755 ${srcdir}/${pkgname}-$pkgver "$pkgdir/usr/bin/mkdotenv"
+	echo "INSTALL"
+	install -Dm755 ${srcdir}/${pkgname}-$pkgver "$pkgdir/usr/bin/mkdotenv"
 }
 
 sha512sums="
