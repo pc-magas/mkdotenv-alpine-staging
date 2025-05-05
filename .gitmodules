@@ -1,0 +1,3 @@
+[submodule "aports"]
+	path="aports"
+	url=ssh://git@gitlab.alpinelinux.org:pc-magas/aports.git
