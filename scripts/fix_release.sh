@@ -36,6 +36,8 @@ echo "TEST whether APKBUILD Can build an APK"
 
 VOLUME_DIR="./volume"
 
+sudo rm -rf ${VOLUME_DIR}
+
 docker run \
     -v ${PWD}/APKBUILD:/usr/src/apkbuild/APKBUILD  \
     -v ${VOLUME_DIR}/.abuild:/home/packager/.abuild \
@@ -44,5 +46,7 @@ docker run \
     pcmagas/alpinebuild
 
 cp ${VOLUME_DIR}/release/APKBUILD ${PWD}/APKBUILD
+
+git commit -m "[BUILDSCRIPT] Fixed and tested APKBUILD" ./APKBUILD
 
 cd ${CURRENT_DIR}
