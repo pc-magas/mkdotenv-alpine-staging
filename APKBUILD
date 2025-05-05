@@ -10,21 +10,21 @@ makedepends="go"
 
 source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/download/v0.2.3/mkdotenv-$pkgver.tar.gz"
 
-
 options="!check" # No tests
 
 prepare() {
+	default_prepare()
 	cd "$srcdir/mkdotenv"
 }
 
 build() {
 	echo "BUILD"
-	go build -ldflags "-X 'mkdotenv/msg.version=${pkgver}'" -o $srcdir/${pkgname}-$pkgver mkdotenv.go
+	go build -ldflags "-X 'mkdotenv/msg.version=$pkgver'" -o $srcdir/$pkgname-$pkgver mkdotenv.go
 }
 
 package() {
 	echo "INSTALL"
-	install -Dm755 ${srcdir}/${pkgname}-$pkgver "$pkgdir/usr/bin/mkdotenv"
+	install -Dm755 $srcdir/$pkgname-$pkgver "$pkgdir/usr/bin/mkdotenv"
 }
 
 sha512sums="
