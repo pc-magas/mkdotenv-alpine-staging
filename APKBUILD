@@ -13,7 +13,6 @@ source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/d
 options="!check" # No tests
 
 prepare() {
-	default_prepare()
 	cd "$srcdir/mkdotenv"
 }
 
