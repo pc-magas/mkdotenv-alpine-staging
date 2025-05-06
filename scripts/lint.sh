@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+
+CURRENT_DIR=${PWD}
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 VOLUME_DIR="./volume"
 
 docker run \
@@ -9,3 +13,5 @@ docker run \
     -v ${VOLUME_DIR}/release:/home/packager/release \
     -ti \
     pcmagas/alpinebuild apkbuild-lint APKBUILD
+
+cd ${CURRENT_DIR}
