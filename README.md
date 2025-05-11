@@ -22,4 +22,8 @@ cd ./aports
 git add testing/mkdotenv/APKBUILD
 git commit --amend -m "testing/mkdotenv: new aport"
 git push origin master --force
+cd ../
+git add aports
+git commit -m "Upgraded aports"
+git push origin master
 ```

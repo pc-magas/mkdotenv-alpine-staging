@@ -8,12 +8,10 @@ arch="x86_64"
 license="GPL-3.0-only"
 makedepends="go"
 
-source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/download/v${pkgver}/mkdotenv-$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/download/v0.2.3/mkdotenv-$pkgver.tar.gz"
 
 options="!check" # No tests
-
 builddir="$srcdir"/mkdotenv
-
 
 build() {
 	go build -ldflags "-X 'mkdotenv/msg.version=$pkgver'" -o mkdotenv mkdotenv.go
