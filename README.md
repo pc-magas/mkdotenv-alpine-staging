@@ -11,3 +11,15 @@ Upon the `scripts` folder there's the following scripts:
 * `fix.sh` fix any common lint errors.
 * `build.sh` build APKBUILD into an  `.apk` file.
 
+# Release
+
+Currently there's a Merge request upon aports therefore follow these steps:
+
+```
+mkdir ./aports/testing/mkdotenv
+cp APKBUILD ./aports/testing/mkdotenv/APKBUILD
+cd ./aports
+git add testing/mkdotenv/APKBUILD
+git commit --amend -m "testing/mkdotenv: new aport"
+git push origin master --force
+```
