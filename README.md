@@ -16,7 +16,6 @@ Upon the `scripts` folder there's the following scripts:
 Currently there's a Merge request upon aports therefore follow these steps:
 
 ```
-mkdir ./aports/testing/mkdotenv
 cp APKBUILD ./aports/testing/mkdotenv/APKBUILD
 cd ./aports
 git add testing/mkdotenv/APKBUILD
