@@ -16,6 +16,5 @@ docker run \
     -v ${VOLUME_DIR}/release:/home/packager/release \
     pcmagas/alpinebuild
 
-cp ${VOLUME_DIR}
-/release/APKBUILD ./APKBUILD
+cp ${VOLUME_DIR}/release/APKBUILD APKBUILD
 cd ${CURRENT_DIR}
