@@ -26,7 +26,6 @@ BEGIN { found=0 }
 ' APKBUILD > APKBUILD.tmp && mv APKBUILD.tmp APKBUILD
 
 sed -i 's/    /\t/g' APKBUILD
-sed -i -E 's/\$\{([a-zA-Z_][a-zA-Z0-9_]*)\}/\$\1/g' APKBUILD
 sed -i '/^\s*echo\s\+/d' APKBUILD
 
 cd ${CURRENT_DIR}
