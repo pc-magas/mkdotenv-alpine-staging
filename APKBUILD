@@ -7,19 +7,18 @@ url="https://github.com/pc-magas/mkdotenv"
 arch="x86_64"
 license="GPL-3.0-only"
 makedepends="go"
-
 source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/archive/refs/tags/v$pkgver.tar.gz"
-
 options="!check" # No tests
 
 build() {
-    make compile  VERSION="${pkgver}" COMPILED_BIN_PATH=$srcdir/${pkgname}-$pkgver
+    make VERSION="${pkgver}"
 }
 
 package() {
-    install -Dm755 ${srcdir}/${pkgname}-$pkgver "$pkgdir/usr/bin/mkdotenv"
+    cd "${srcdir}/mkdotenv-${pkgver}"
+    make install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
 }
 
 sha512sums="
-c225f5f0ca1b3a1a34ff0386144ea07be01ff79a6a9987309d1d6a249fd3c52aff3012d4149d840f9b732ca9b4f5c630d50c2766b8de3a9c99c971c0990984ad  mkdotenv-0.1.0.tar.gz
+8a8d3e9b3160affa3be5d9ba68e9222047b862dd34a21eb6b4a09bbb3dad445d2a7ecf4a0d412e0d16cbb732e8c94f542b103f94823aff34b3af8247ab45e65d  mkdotenv-0.3.4.tar.gz
 "
