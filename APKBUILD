@@ -7,16 +7,16 @@ url="https://github.com/pc-magas/mkdotenv"
 arch="x86_64"
 license="GPL-3.0-only"
 makedepends="go"
-source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/archive/refs/tags/v$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/download/v$pkgver/mkdotenv-$pkgver.tar.gz"
 options="!check" # No tests
 
 build() {
-    make VERSION="${pkgver}"
+	make VERSION="$pkgver"
 }
 
 package() {
-    cd "${srcdir}/mkdotenv-${pkgver}"
-    make install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
+	cd "$srcdir/mkdotenv-$pkgver"
+	make install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
 }
 
 sha512sums="
