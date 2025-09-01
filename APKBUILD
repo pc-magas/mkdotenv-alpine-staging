@@ -15,8 +15,7 @@ build() {
 }
 
 package() {
-	cd "$srcdir"
-	make install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
+	make -C "$srcdir" install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
 }
 
 sha512sums="
