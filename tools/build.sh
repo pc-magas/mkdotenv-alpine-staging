@@ -15,6 +15,3 @@ docker run \
     -v ${VOLUME_DIR}/keys:/etc/apk/keys \
     -v ${VOLUME_DIR}/release:/home/packager/release \
     ghcr.io/pc-magas/alpinebuild
-
-cp ${VOLUME_DIR}/release/APKBUILD APKBUILD
-cd ${CURRENT_DIR}

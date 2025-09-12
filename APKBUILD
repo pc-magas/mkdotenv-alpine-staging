@@ -7,7 +7,7 @@ url="https://github.com/pc-magas/mkdotenv"
 arch="all"
 license="GPL-3.0-only"
 makedepends="go"
-source="$pkgname-$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/download/v$pkgver/mkdotenv-$pkgver.tar.gz"
 options="!check" # No tests
 
 build() {
