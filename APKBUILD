@@ -10,12 +10,12 @@ makedepends="go"
 source="$pkgname-$pkgver.tar.gz"
 options="!check" # No tests
 
-build(){
-    make VERSION="$pkgver" GOARCH=$CARCH
+build() {
+	make VERSION="$pkgver" GOARCH=$CARCH
 }
 
-package(){
-    make -C "$srcdir" install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
+package() {
+	make -C "$srcdir" install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
 }
 
 sha512sums="
