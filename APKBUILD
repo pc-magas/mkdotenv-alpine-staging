@@ -15,7 +15,7 @@ build() {
 }
 
 package() {
-	make -C "$srcdir" install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin
+	make -C "$srcdir" install_bin DESTDIR="$pkgdir" INSTALL_BIN_DIR=/usr/bin GOARCH=$CARCH VERSION="$pkgver"
 }
 
 sha512sums="
