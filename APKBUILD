@@ -1,17 +1,17 @@
 # Maintainer: Dimitrios Desyllas <pcmagas@disroot.org>
 pkgname=mkdotenv
-pkgver=0.4.9
+pkgver=1.0.0
 pkgrel=0
 pkgdesc="Lightweight and efficient tool for managing your .env files."
 url="https://github.com/pc-magas/mkdotenv"
 arch="all"
 license="GPL-3.0-only"
 makedepends="go"
-source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/download/v$pkgver/mkdotenv-$pkgver.tar.gz"
+source="$pkgname-$pkgver.tar.gz"
 options="!check" # No tests
 
 build() {
-	make VERSION="$pkgver" GOARCH=$CARCH
+	make bin VERSION="$pkgver" GOARCH=$CARCH
 }
 
 package() {
@@ -19,5 +19,5 @@ package() {
 }
 
 sha512sums="
-9ec506056a4ef94c3f00bebd4e25986a70d61c82aaa1e5817ef500ca4c8667d0b8eb6a4b553dc2a81203c91668c51fe3181fe6e30958e967f09b4c43ea1aa291 mkdotenv-0.4.9.tar.gz
+d0c69b9f714ae160d17f2e21f0a0b8908424599a647523f8a93b59df679a8f5cc32b80b62bf41b10d21084767f1bf7bca9f6d4c0c8fd06b7171db71b2b74f8aa mkdotenv-1.0.0.tar.gz
 "
