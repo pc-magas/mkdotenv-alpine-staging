@@ -13,14 +13,14 @@ Upon the `scripts` folder there's the following scripts:
 
 # Release
 
-Currently there's a Merge request upon aports therefore follow these steps:
+In order to release run these steps:
 
 ```
 cp APKBUILD ./aports/testing/mkdotenv/APKBUILD
 cd ./aports
 git add testing/mkdotenv/APKBUILD
-git commit --amend -m "testing/mkdotenv: new aport"
-git push origin master --force
+git commit --amend -m " testing/my-package: upgrade to <new-version>"
+git push origin testing/mkdotenv-{version} --force
 cd ../
 git add aports
 git commit -m "Upgraded aports"
