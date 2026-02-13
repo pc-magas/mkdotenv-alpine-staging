@@ -19,7 +19,7 @@ In order to release run these steps:
 cp APKBUILD ./aports/testing/mkdotenv/APKBUILD
 cd ./aports
 git add testing/mkdotenv/APKBUILD
-git commit --amend -m " testing/my-package: upgrade to <new-version>"
+git commit --amend -m "testing/mkdotenv-<new-version>: upgrade to <new-version>"
 git push origin testing/mkdotenv-{version} --force
 cd ../
 git add aports
