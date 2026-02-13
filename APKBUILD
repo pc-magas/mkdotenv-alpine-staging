@@ -11,7 +11,7 @@ source="$pkgname-$pkgver.tar.gz::https://github.com/pc-magas/mkdotenv/releases/d
 options="!check" # No tests
 
 build() {
-	make bin VERSION="$pkgver" GOARCH=$CARCH
+	make -C "$srcdir" bin VERSION="$pkgver" GOARCH=$CARCH
 }
 
 package() {
